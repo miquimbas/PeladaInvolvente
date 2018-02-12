@@ -13,6 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 //@EnableJpaRepositories("br.com.repository")
 @EntityScan("br.com.entities")
 @ComponentScan("br.com.controllers")
+@ComponentScan("br.com.services")
 @SpringBootApplication
 public class SpringPropertiesApplication extends SpringBootServletInitializer{
 

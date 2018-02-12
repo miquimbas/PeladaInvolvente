@@ -1,21 +1,19 @@
-package br.com.controllers;
+package br.com.controllers.game;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Component;
 
 import br.com.entities.Game;
 import br.com.entities.Player;
+import br.com.services.game.GameGateway;
 
-@RestController
-@RequestMapping("/pelada")
-public class GameController {
-	
-	@RequestMapping(value="/list",method=RequestMethod.GET)
-	Game getGame () {
+@Component
+public class GameGatewayImpl implements GameGateway{
+
+	@Override
+	public Game getNextGameData() {
 		Game game = new Game();
 		game.setDay(new Date());
 		
@@ -31,4 +29,5 @@ public class GameController {
 		game.setWaitingList(players);
 		return game;
 	}
+	
 }
